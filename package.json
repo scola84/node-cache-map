@@ -1,0 +1,16 @@
+{
+  "name": "@scola/cache-map",
+  "version": "0.0.0",
+  "description": "Map Cache",
+  "repository": "github:scola84/node-cache-map",
+  "author": "M.C. van den Boogaart <scola@kvdb.name>",
+  "license": "MIT",
+  "main": "./dist/cache-map.js",
+  "jsnext:main": "./index.js",
+  "devDependencies": {
+    "rollup": "^0.26.3"
+  },
+  "scripts": {
+    "build": "rollup -i ./index.js -o ./dist/cache-map.js -f cjs"
+  }
+}
