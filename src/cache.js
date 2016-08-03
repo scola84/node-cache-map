@@ -29,7 +29,7 @@ export default class MapCache {
     return this;
   }
 
-  get(key, callback = () => {}) {
+  get(key, callback) {
     callback(null, this._values.get(key));
   }
 
