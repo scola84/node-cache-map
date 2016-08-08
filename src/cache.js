@@ -8,12 +8,16 @@ export default class MapCache {
   }
 
   destroy() {
-    this.interval(null, false);
-    this._expiries = new Map();
+    this._expire.clear();
     this._values.clear();
+    this.interval(null, false);
   }
 
   lifetime(lifetime) {
+    if (typeof lifetime === 'undefined') {
+      return this._lifetime;
+    }
+
     this._lifetime = lifetime;
     return this;
   }
