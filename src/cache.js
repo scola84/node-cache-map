@@ -13,23 +13,23 @@ export default class MapCache {
     this.interval(null, false);
   }
 
-  lifetime(lifetime) {
-    if (typeof lifetime === 'undefined') {
+  lifetime(value) {
+    if (typeof value === 'undefined') {
       return this._lifetime;
     }
 
-    this._lifetime = lifetime;
+    this._lifetime = value;
     return this;
   }
 
-  interval(interval, action) {
+  interval(value, action) {
     clearInterval(this._interval);
 
     if (action === false) {
       return this;
     }
 
-    this._interval = setInterval(this._gc.bind(this), interval);
+    this._interval = setInterval(this._gc.bind(this), value);
     return this;
   }
 
